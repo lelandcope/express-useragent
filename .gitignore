@@ -19,4 +19,7 @@ Desktop.ini
 # Coveralls
 coverage
 
+# VS Code
+.history
+
 lib/express-useragent.min.js
