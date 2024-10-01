@@ -7,12 +7,12 @@
 
 var ua = require('../');
 
-exports['Andriod Phone'] = function (test) {
+exports['Android Tablet'] = function (test) {
 
     var source = '';
-    source += 'Mozilla/5.0 (Linux; U; Android 4.1.2; en-us; ';
-    source += 'SAMSUNG-SGH-I777 Build/JZO54K) ';
-    source += 'AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30';
+    source += 'Mozilla/5.0 (Linux; U; Android 4.0.4; en-us; ';
+    source += 'SAMSUNG-SGH-I957 Build/IMM76D) ';
+    source += 'AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30';
 
     var userAgent = ua.parse(source);
 
@@ -42,13 +42,12 @@ exports['Andriod Phone'] = function (test) {
     test.ok(!userAgent.isSamsung, 'Samsung');
     test.ok(!userAgent.isRaspberry, 'Raspberry');
     test.ok(!userAgent.isBot, 'Bot');
-    test.ok(!userAgent.isAndroidTablet, 'AndroidTablet');
+    test.ok(userAgent.isAndroidTablet, 'AndroidTablet');
 
-    test.equal(userAgent.Browser, 'Safari');
-    test.equal(userAgent.OS, 'Linux');
-    test.equal(userAgent.Platform, 'Android');
-    test.equal(0, Object.keys(userAgent.GeoIP).length);
-    test.equal(userAgent.Version, '4.0');
+    test.equal(userAgent.browser, 'Safari');
+    test.equal(userAgent.os, 'Linux');
+    test.equal(userAgent.platform, 'Android');
+    test.equal(userAgent.version, '4.0');
 
     test.done();
 };

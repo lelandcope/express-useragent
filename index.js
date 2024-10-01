@@ -4,22 +4,26 @@
  * @created     2012-03-24 16:21:10
  * @category    Express Helpers
  * @package     express-useragent
- * @version     0.1.11
- * @copyright   Copyright (c) 2009-2012 - All rights reserved.
+ * @version     1.0.15
+ * @copyright   Copyright (c) 2009-2020 - All rights reserved.
  * @license     MIT License
- * @author      Alexey Gordeyev IK <aleksej@gordejev.lv>
+ * @author      Aleksejs Gordejevs IK <aleksej@gordejev.lv>
  * @link        http://www.gordejev.lv
  *
  */
-var UserAgent = require('./lib/express-useragent').UserAgent;
+var usrg = require('./lib/express-useragent');
+var UserAgent = usrg.UserAgent;
 module.exports = new UserAgent();
 module.exports.UserAgent = UserAgent;
-module.exports.express = function() {
-    return function(req, res, next) {
-        var source = req.headers['user-agent'] || '',
-            ua = new UserAgent();
+module.exports.express = function () {
+    return function (req, res, next) {
+        var source = req.headers['user-agent'] || '';
+        if (req.headers['x-ucbrowser-ua']) {  //special case of UC Browser
+            source = req.headers['x-ucbrowser-ua'];
+        }
+        var ua = new UserAgent();
         if (typeof source === 'undefined') {
-            source = 'unknown';
+            source = "unknown";
         }
         ua.Agent.source = source.replace(/^\s*/, '').replace(/\s*$/, '');
         ua.Agent.os = ua.getOS(ua.Agent.source);
@@ -34,9 +38,10 @@ module.exports.express = function() {
         ua.testCompatibilityMode();
         ua.testSilk();
         ua.testKindleFire();
+        ua.testWechat();
         req.useragent = ua.Agent;
         if ('function' === typeof res.locals) {
-            res.locals({ useragent: ua.Agent });
+            res.locals({useragent: ua.Agent});
         } else {
             res.locals.useragent = ua.Agent;
         }

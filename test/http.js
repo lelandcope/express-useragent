@@ -4,16 +4,16 @@
  * @created     2012-03-24 16:21:10
  * @category    Express Helpers
  * @package     express-useragent
- * @version     0.0.8
+ * @version     1.0.14
  * @copyright   Copyright (c) 2009-2012 - All rights reserved.
  * @license     MIT License
- * @author      Alexey Gordeyev IK <aleksej@gordejev.lv>
+ * @author      Aleksejs Gordejevs IK <aleksej@gordejev.lv>
  * @link        http://www.gordejev.lv
  *
  */
 
-var http = require('http')
-    , useragent = require('./../');
+var http = require('http');
+var useragent = require('../');
 
 var app = http.createServer(function (req, res) {
     var source = req.headers['user-agent'],

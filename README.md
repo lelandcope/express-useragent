@@ -1,5 +1,6 @@
 [![build status](https://secure.travis-ci.org/biggora/express-useragent.png)](http://travis-ci.org/biggora/express-useragent)
 [![NPM version](https://badge.fury.io/js/express-useragent.png)](http://badge.fury.io/js/express-useragent)
+[![Git commit with emojis!](https://img.shields.io/badge/gitmoji-git%20commit%20with%20emojis!-brightgreen.svg)](https://gitmoji.js.org)
 # Fast Middleware exposing user-agent for [NodeJS](http://nodejs.org/)
 
 express-useragent is a simple NodeJS/ExpressJS user-agent middleware exposing user-agent details to your application and views.
@@ -130,31 +131,17 @@ The following projects use express-useragent.
 If you are using express-useragent in a project, app, or module, get on the list below
 by getting in touch or submitting a pull request with changes to the README.
 
-### Recommend extensions
-
-- [Bootstrap Fancy File Plugin](http://biggora.github.io/bootstrap-fancyfile/)
-- [Bootstrap Ajax Typeahead Plugin](https://github.com/biggora/bootstrap-ajax-typeahead)
-- [TrinteJS - Javascrpt MVC Framework for Node.JS](http://www.trintejs.com/)
-- [CaminteJS - Cross-db ORM for NodeJS](http://www.camintejs.com/)
-- [MongoDB Session Storage for ExpressJS](https://github.com/biggora/express-mongodb)
-- [2CO NodeJS adapter for 2checkout API payment gateway](https://github.com/biggora/2co)
-
-### Startups & Apps
-
-- [TViMama](http://tvimama.com/)
-- [GorkaTV](https://gorkatv.com/)
-- [TrinteJS](http://www.trintejs.com/)
-- [CaminteJS](http://www.camintejs.com/)
+[LK4us](https://lk4.us)
 
 ## Author
 
-Alexey Gordeyev (aleksej@gordejev.lv).
+Aleksejs Gordejevs (aleksej@gordejev.lv).
 
 ## License
 
 (The MIT License)
 
-Copyright (c) 2012 Alexey Gordeyev <aleksej@gordejev.lv>
+Copyright (c) 2012-2020 Aleksejs Gordejevs <aleksej@gordejev.lv>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
